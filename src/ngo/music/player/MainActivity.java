@@ -1,7 +1,8 @@
 package ngo.music.player;
 
+import ngo.music.player.Fragments.ExploreFragment;
+import ngo.music.player.Fragments.NavigationDrawerFragment;
 import android.app.Activity;
-
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -51,19 +52,31 @@ public class MainActivity extends Activity implements
 	public void onNavigationDrawerItemSelected(int position) {
 		// update the main content by replacing fragments
 		FragmentManager fragmentManager = getFragmentManager();
-		fragmentManager
-				.beginTransaction()
-				.replace(R.id.container,
-						PlaceholderFragment.newInstance(position + 1)).commit();
+		switch (position) {
+		case 1:
+			fragmentManager
+			.beginTransaction()
+			.replace(R.id.container,
+					new ExploreFragment()).commit();	
+			break;
+
+		default:
+			fragmentManager
+			.beginTransaction()
+			.replace(R.id.container,
+					PlaceholderFragment.newInstance(0)).commit();
+			break;
+		}
+		
 	}
 
 	public void onSectionAttached(int number) {
 		switch (number) {
 		case 1:
-			mTitle = getString(R.string.title_section1);
+			mTitle = getString(R.string.my_profile);
 			break;
 		case 2:
-			mTitle = getString(R.string.title_section2);
+			mTitle = getString(R.string.explore);
 			break;
 		case 3:
 			mTitle = getString(R.string.title_section3);

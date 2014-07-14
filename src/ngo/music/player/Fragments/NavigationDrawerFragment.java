@@ -1,5 +1,11 @@
-package ngo.music.player;
+package ngo.music.player.Fragments;
 
+import ngo.music.player.R;
+import ngo.music.player.R.drawable;
+import ngo.music.player.R.id;
+import ngo.music.player.R.layout;
+import ngo.music.player.R.menu;
+import ngo.music.player.R.string;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
@@ -108,8 +114,8 @@ public class NavigationDrawerFragment extends Fragment {
 				.getThemedContext(),
 				android.R.layout.simple_list_item_activated_1,
 				android.R.id.text1, new String[] {
-						getString(R.string.title_section1),
-						getString(R.string.title_section2),
+						getString(R.string.my_profile),
+						getString(R.string.explore),
 						getString(R.string.title_section3), }));
 		mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
 		return mDrawerListView;
@@ -140,8 +146,7 @@ public class NavigationDrawerFragment extends Fragment {
 		// set up the drawer's list view with items and click listener
 
 		ActionBar actionBar = getActionBar();
-		actionBar.setDisplayHomeAsUpEnabled(true);
-		actionBar.setHomeButtonEnabled(true);
+		
 
 		// ActionBarDrawerToggle ties together the the proper interactions
 		// between the navigation drawer and the action bar app icon.
