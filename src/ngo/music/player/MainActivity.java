@@ -1,5 +1,9 @@
 package ngo.music.player;
 
+import java.util.ArrayList;
+import java.util.Set;
+
+import ngo.music.player.Category.MusicCategory;
 import ngo.music.player.Fragments.ExploreFragment;
 import ngo.music.player.Fragments.NavigationDrawerFragment;
 import android.app.Activity;
@@ -15,11 +19,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class MainActivity extends Activity implements
+public class MainActivity extends FragmentActivity implements
 		NavigationDrawerFragment.NavigationDrawerCallbacks {
 
 	/**
@@ -33,6 +38,7 @@ public class MainActivity extends Activity implements
 	 * {@link #restoreActionBar()}.
 	 */
 	private CharSequence mTitle;
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -71,17 +77,15 @@ public class MainActivity extends Activity implements
 	}
 
 	public void onSectionAttached(int number) {
-		switch (number) {
-		case 1:
-			mTitle = getString(R.string.my_profile);
-			break;
-		case 2:
-			mTitle = getString(R.string.explore);
-			break;
-		case 3:
-			mTitle = getString(R.string.title_section3);
-			break;
+		Set<MusicCategory> keySet = StaticVariable.CATEGORY_TITLE.keySet();
+		if (keySet != null){
+			ArrayList<MusicCategory> list = new ArrayList<MusicCategory>(keySet);
+			MusicCategory musicCategory = list.get(number);
+			//MainActivity.nameCategory = name;
+			//NotificationService.newArticlePerCate.put(name, 0);
+			mTitle = StaticVariable.CATEGORY_TITLE.get(musicCategory);
 		}
+		
 	}
 
 	public void restoreActionBar() {
@@ -116,6 +120,12 @@ public class MainActivity extends Activity implements
 		return super.onOptionsItemSelected(item);
 	}
 
+//	/**
+//	 * @return the standard size for rendering item
+//	 */
+//	public static int getStandardSize() {
+//		return Math.min(screenWidth, screenHeight);
+//	}
 	/**
 	 * A placeholder fragment containing a simple view.
 	 */

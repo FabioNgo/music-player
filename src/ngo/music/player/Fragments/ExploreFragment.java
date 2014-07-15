@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.ListIterator;
 
 import ngo.music.player.R;
+import ngo.music.player.StaticVariable;
 import ngo.music.player.Adapters.ExploreAdapter;
+import ngo.music.player.Category.MusicCategory;
 import ngo.music.player.Items.ExploreItem;
 import android.app.Fragment;
 import android.os.Bundle;
@@ -27,11 +29,13 @@ public class ExploreFragment extends Fragment {
 		View rootView = inflater.inflate(R.layout.explore_fragment, container,
 				false);
 
+		//Add item in Explore tab
+		
 		ArrayList<ExploreItem> exploreItems = new ArrayList<ExploreItem>();
-		exploreItems.add(new ExploreItem("Popular Music", R.drawable.ic_launcher));
-		exploreItems.add(new ExploreItem("Popular Audio", R.drawable.ic_launcher));
-		exploreItems.add(new ExploreItem("Rock", R.drawable.ic_launcher));
-		exploreItems.add(new ExploreItem("Electronic", R.drawable.ic_launcher));
+		for (MusicCategory category : MusicCategory.values()){
+			exploreItems.add(new ExploreItem(StaticVariable.CATEGORY_TITLE.get(category),R.drawable.ic_launcher));
+		}
+				
 		ExploreAdapter exploreAdapter = new ExploreAdapter(getActivity(), R.layout.single_explore_layout, exploreItems);
 		ListView exploreListView = (ListView)rootView.findViewById(R.id.explore_list_view);
 		exploreListView.setAdapter(exploreAdapter);
