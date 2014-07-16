@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 
-public class AllSongsFragment extends Fragment {
+public class AllSongsFragment extends android.support.v4.app.Fragment {
 
 	private GridView gridAllSongs;
 

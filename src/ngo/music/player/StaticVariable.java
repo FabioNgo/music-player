@@ -1,5 +1,6 @@
 package ngo.music.player;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -9,7 +10,7 @@ import ngo.music.player.Category.MusicCategory;
 public class StaticVariable {
 
 	//Map the category in MusicCategory with the title in Explore Fragment
-	public static  HashMap<MusicCategory, String> CATEGORY_TITLE = new HashMap<MusicCategory, String>();
+	public static final HashMap<MusicCategory, String> CATEGORY_TITLE = new HashMap<MusicCategory, String>();
 	
 	//Inital the hashmap
 	static {
@@ -60,11 +61,62 @@ public class StaticVariable {
 		CATEGORY_TITLE.put(MusicCategory.Sports, "Sports");
 		CATEGORY_TITLE.put(MusicCategory.Storytelling, "Storytelling");
 		CATEGORY_TITLE.put(MusicCategory.Technology, "Technology");
-		
-		
-		
 	}
 	
+	//Database name array
+	public static final ArrayList<String> TABLE_NAME_ARRAY = new ArrayList<String>();
+	//Initial Array
+	static{
+		TABLE_NAME_ARRAY.add("popular_music");
+		TABLE_NAME_ARRAY.add("popular_audio");
+		TABLE_NAME_ARRAY.add("rock");
+		TABLE_NAME_ARRAY.add("electronic");
+		TABLE_NAME_ARRAY.add("classical");
+		TABLE_NAME_ARRAY.add("pop");
+		TABLE_NAME_ARRAY.add("jazz");
+		TABLE_NAME_ARRAY.add("rap");
+		TABLE_NAME_ARRAY.add("hiphop");
+		TABLE_NAME_ARRAY.add("rnb");
+		TABLE_NAME_ARRAY.add("metal");
+		TABLE_NAME_ARRAY.add("reggae");
+		TABLE_NAME_ARRAY.add("country");
+		TABLE_NAME_ARRAY.add("world");
+		TABLE_NAME_ARRAY.add("mixtape");
+		TABLE_NAME_ARRAY.add("blues");
+		TABLE_NAME_ARRAY.add("soul");
+		TABLE_NAME_ARRAY.add("dance");
+		TABLE_NAME_ARRAY.add("latin");
+		TABLE_NAME_ARRAY.add("ambient");
+		TABLE_NAME_ARRAY.add("alternative_rock");
+		TABLE_NAME_ARRAY.add("indie_rock");
+		TABLE_NAME_ARRAY.add("deep_house");
+		TABLE_NAME_ARRAY.add("disco");
+		TABLE_NAME_ARRAY.add("drum_bass");
+		TABLE_NAME_ARRAY.add("trance");
+		TABLE_NAME_ARRAY.add("dubstep");
+		TABLE_NAME_ARRAY.add("electro");
+		TABLE_NAME_ARRAY.add("folk");
+		TABLE_NAME_ARRAY.add("hardcore_techno");
+		TABLE_NAME_ARRAY.add("minimal_techno");
+		TABLE_NAME_ARRAY.add("progressive_house");
+		TABLE_NAME_ARRAY.add("punk");
+		TABLE_NAME_ARRAY.add("tech_house");
+		TABLE_NAME_ARRAY.add("trap");
+		TABLE_NAME_ARRAY.add("trip_hop");
+		TABLE_NAME_ARRAY.add("singer_song_writer");
+		TABLE_NAME_ARRAY.add("audiobooks");
+		TABLE_NAME_ARRAY.add("business");
+		TABLE_NAME_ARRAY.add("comedy");
+		TABLE_NAME_ARRAY.add("entertainment");
+		TABLE_NAME_ARRAY.add("learning");
+		TABLE_NAME_ARRAY.add("news_politics");
+		TABLE_NAME_ARRAY.add("science");
+		TABLE_NAME_ARRAY.add("sports");
+		TABLE_NAME_ARRAY.add("storytelling");
+		TABLE_NAME_ARRAY.add("technology");
+		
+	}
+		
 	
 	
 }

@@ -85,7 +85,7 @@ public class AllSongAdapter  extends ArrayAdapter<SongItem>{
 					// Loader image - will be shown before loading image
 					int loader = R.drawable.image_not_found;
 
-					imgLoader.DisplayImage(i.getImageURL(), loader, avatar);
+					imgLoader.DisplayImage(i.getImageUrl(), loader, avatar);
 					
 
 				}

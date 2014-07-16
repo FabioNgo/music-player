@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Set;
 
 import ngo.music.player.Category.MusicCategory;
-import ngo.music.player.Fragments.ExploreFragment;
+import ngo.music.player.Fragments.ExploreDrawerFragment;
 import ngo.music.player.Fragments.NavigationDrawerFragment;
 import android.app.Activity;
 import android.app.ActionBar;
@@ -39,6 +39,7 @@ public class MainActivity extends FragmentActivity implements
 	 */
 	private CharSequence mTitle;
 	
+	public static MusicCategory SongCategory = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +64,7 @@ public class MainActivity extends FragmentActivity implements
 			fragmentManager
 			.beginTransaction()
 			.replace(R.id.container,
-					new ExploreFragment()).commit();	
+					new ExploreDrawerFragment()).commit();	
 			break;
 
 		default:
