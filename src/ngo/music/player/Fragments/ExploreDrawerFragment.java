@@ -11,7 +11,7 @@ import java.util.ListIterator;
 import ngo.music.player.R;
 import ngo.music.player.StaticVariable;
 import ngo.music.player.Adapters.ExploreAdapter;
-import ngo.music.player.Category.MusicCategory;
+import ngo.music.player.Category.SongCategory;
 import ngo.music.player.Items.ExploreItem;
 import android.app.Fragment;
 import android.os.Bundle;
@@ -32,7 +32,7 @@ public class ExploreDrawerFragment extends Fragment {
 		//Add item in Explore tab
 		
 		ArrayList<ExploreItem> exploreItems = new ArrayList<ExploreItem>();
-		for (MusicCategory category : MusicCategory.values()){
+		for (SongCategory category : SongCategory.values()){
 			exploreItems.add(new ExploreItem(StaticVariable.CATEGORY_TITLE.get(category),R.drawable.ic_launcher));
 		}
 				

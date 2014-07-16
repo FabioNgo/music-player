@@ -1,6 +1,7 @@
 package ngo.music.player.Category;
 
-public enum MusicCategory {
+public enum SongCategory {
+	All,
 	PopularMusic,
 	PopularAudio,
 	Rock,

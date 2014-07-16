@@ -3,7 +3,7 @@ package ngo.music.player;
 import java.util.ArrayList;
 import java.util.Set;
 
-import ngo.music.player.Category.MusicCategory;
+import ngo.music.player.Category.SongCategory;
 import ngo.music.player.Fragments.ExploreDrawerFragment;
 import ngo.music.player.Fragments.NavigationDrawerFragment;
 import android.app.Activity;
@@ -39,7 +39,7 @@ public class MainActivity extends FragmentActivity implements
 	 */
 	private CharSequence mTitle;
 	
-	public static MusicCategory SongCategory = null;
+	public static SongCategory SongCategory = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -78,10 +78,10 @@ public class MainActivity extends FragmentActivity implements
 	}
 
 	public void onSectionAttached(int number) {
-		Set<MusicCategory> keySet = StaticVariable.CATEGORY_TITLE.keySet();
+		Set<SongCategory> keySet = StaticVariable.CATEGORY_TITLE.keySet();
 		if (keySet != null){
-			ArrayList<MusicCategory> list = new ArrayList<MusicCategory>(keySet);
-			MusicCategory musicCategory = list.get(number);
+			ArrayList<SongCategory> list = new ArrayList<SongCategory>(keySet);
+			SongCategory musicCategory = list.get(number);
 			//MainActivity.nameCategory = name;
 			//NotificationService.newArticlePerCate.put(name, 0);
 			mTitle = StaticVariable.CATEGORY_TITLE.get(musicCategory);

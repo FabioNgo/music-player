@@ -1,7 +1,10 @@
 package ngo.music.player.Fragments;
 
 
+import java.util.ArrayList;
+
 import ngo.music.player.R;
+import ngo.music.player.Category.SongCategory;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,17 +12,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 
-public class AllSongsFragment extends android.support.v4.app.Fragment {
+public class ListSongsFragment extends android.support.v4.app.Fragment {
 
 	private GridView gridAllSongs;
-
-	public AllSongsFragment() {
+	private SongCategory category;
+	public ListSongsFragment(SongCategory category) {
+		this.category = category;
+	}
+	public ListSongsFragment() {
+		this.category = SongCategory.All;
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.all_song_layout, container,
+		View rootView = inflater.inflate(R.layout.list_song_layout, container,
 				false);
 
 		gridAllSongs = (GridView) rootView.findViewById(R.id.gridAllSongs);

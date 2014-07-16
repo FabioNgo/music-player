@@ -16,6 +16,7 @@ import java.util.Set;
 import ngo.music.player.MainActivity;
 import ngo.music.player.StaticVariable;
 import ngo.music.player.Category.MusicCategory;
+import ngo.music.player.Category.SongCategory;
 import ngo.music.player.Items.SongItem;
 import android.content.ContentValues;
 import android.content.Context;
@@ -310,9 +311,9 @@ public class SongDatabaseHandler extends SQLiteOpenHelper {
 		//StaticVariable.CATEGORY_TITLE.
 		String table_name = null;
 		//Log.d("DEBUG", "SQL CATE " + MainActivity.nameCategory);
-		Set<MusicCategory> keySet = StaticVariable.CATEGORY_TITLE.keySet();
+		Set<SongCategory> keySet = StaticVariable.CATEGORY_TITLE.keySet();
 		if (keySet != null){
-			ArrayList<MusicCategory> list = new ArrayList<MusicCategory>(keySet);
+			ArrayList<SongCategory> list = new ArrayList<SongCategory>(keySet);
 			int position = list.indexOf(MainActivity.SongCategory);
 			table_name = StaticVariable.TABLE_NAME_ARRAY.get(position);
 		}

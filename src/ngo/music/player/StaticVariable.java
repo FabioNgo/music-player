@@ -5,62 +5,63 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 
-import ngo.music.player.Category.MusicCategory;
+import ngo.music.player.Category.SongCategory;
 
 public class StaticVariable {
 
 	//Map the category in MusicCategory with the title in Explore Fragment
-	public static final HashMap<MusicCategory, String> CATEGORY_TITLE = new HashMap<MusicCategory, String>();
+	public static final HashMap<SongCategory, String> CATEGORY_TITLE = new HashMap<SongCategory, String>();
 	
 	//Inital the hashmap
 	static {
-		CATEGORY_TITLE.put(MusicCategory.PopularMusic, "Popular Music");
-		CATEGORY_TITLE.put(MusicCategory.PopularAudio, "Popular Audio");
-		CATEGORY_TITLE.put(MusicCategory.Rock, "Rock");
-		CATEGORY_TITLE.put(MusicCategory.Electronic, "Electronic");
-		CATEGORY_TITLE.put(MusicCategory.Classical, "Classical");
-		CATEGORY_TITLE.put(MusicCategory.Pop, "Pop");
-		CATEGORY_TITLE.put(MusicCategory.Jazz, "Jazz");
-		CATEGORY_TITLE.put(MusicCategory.Rap, "Rap");
-		CATEGORY_TITLE.put(MusicCategory.HipHop, "Hip Hop");
-		CATEGORY_TITLE.put(MusicCategory.RnB, "R&B");
-		CATEGORY_TITLE.put(MusicCategory.Metal, "Metal");
-		CATEGORY_TITLE.put(MusicCategory.Reggae, "Reggae");
-		CATEGORY_TITLE.put(MusicCategory.Country, "Country");
-		CATEGORY_TITLE.put(MusicCategory.World, "World");
-		CATEGORY_TITLE.put(MusicCategory.Mixtape, "Mixtape");
-		CATEGORY_TITLE.put(MusicCategory.Blues, "Blues");
-		CATEGORY_TITLE.put(MusicCategory.Soul, "Soul");
-		CATEGORY_TITLE.put(MusicCategory.Dance, "Dance");
-		CATEGORY_TITLE.put(MusicCategory.Latin, "Latin");
-		CATEGORY_TITLE.put(MusicCategory.Ambient, "Ambient");
-		CATEGORY_TITLE.put(MusicCategory.AlternavtiveRock, "Alternative Rock");
-		CATEGORY_TITLE.put(MusicCategory.IndieRock, "Indue Rock");
-		CATEGORY_TITLE.put(MusicCategory.DeepHouse, "Deep House");
-		CATEGORY_TITLE.put(MusicCategory.Disco, "Disco");
-		CATEGORY_TITLE.put(MusicCategory.DrumBass, "Drum & Bass");
-		CATEGORY_TITLE.put(MusicCategory.Trance, "Trance");
-		CATEGORY_TITLE.put(MusicCategory.Dubstep, "Dubstep");
-		CATEGORY_TITLE.put(MusicCategory.Electro, "Electro");
-		CATEGORY_TITLE.put(MusicCategory.Folk, "Folk");
-		CATEGORY_TITLE.put(MusicCategory.HardcoreTechno, "Hardcore Techno");
-		CATEGORY_TITLE.put(MusicCategory.MiniamalTechno, "Minimal Techno");
-		CATEGORY_TITLE.put(MusicCategory.ProgressiveHouse, "Progressive House");
-		CATEGORY_TITLE.put(MusicCategory.Punk, "Punk");
-		CATEGORY_TITLE.put(MusicCategory.TechHouse, "Tech house");
-		CATEGORY_TITLE.put(MusicCategory.Trap, "Trap");
-		CATEGORY_TITLE.put(MusicCategory.TripHop, "Trip Hop");
-		CATEGORY_TITLE.put(MusicCategory.SingerSongWriter, "Singer-Songwriter");
-		CATEGORY_TITLE.put(MusicCategory.Audiobooks, "Audiobooks");
-		CATEGORY_TITLE.put(MusicCategory.Business, "Business");
-		CATEGORY_TITLE.put(MusicCategory.Comedy, "Comedy");
-		CATEGORY_TITLE.put(MusicCategory.Entertainment, "Entertainment");
-		CATEGORY_TITLE.put(MusicCategory.Learning, "Learning");
-		CATEGORY_TITLE.put(MusicCategory.NewsPolitics, "News  & Politics");
-		CATEGORY_TITLE.put(MusicCategory.Science, "Science");
-		CATEGORY_TITLE.put(MusicCategory.Sports, "Sports");
-		CATEGORY_TITLE.put(MusicCategory.Storytelling, "Storytelling");
-		CATEGORY_TITLE.put(MusicCategory.Technology, "Technology");
+		CATEGORY_TITLE.put(SongCategory.All, "All");
+		CATEGORY_TITLE.put(SongCategory.PopularMusic, "Popular Music");
+		CATEGORY_TITLE.put(SongCategory.PopularAudio, "Popular Audio");
+		CATEGORY_TITLE.put(SongCategory.Rock, "Rock");
+		CATEGORY_TITLE.put(SongCategory.Electronic, "Electronic");
+		CATEGORY_TITLE.put(SongCategory.Classical, "Classical");
+		CATEGORY_TITLE.put(SongCategory.Pop, "Pop");
+		CATEGORY_TITLE.put(SongCategory.Jazz, "Jazz");
+		CATEGORY_TITLE.put(SongCategory.Rap, "Rap");
+		CATEGORY_TITLE.put(SongCategory.HipHop, "Hip Hop");
+		CATEGORY_TITLE.put(SongCategory.RnB, "R&B");
+		CATEGORY_TITLE.put(SongCategory.Metal, "Metal");
+		CATEGORY_TITLE.put(SongCategory.Reggae, "Reggae");
+		CATEGORY_TITLE.put(SongCategory.Country, "Country");
+		CATEGORY_TITLE.put(SongCategory.World, "World");
+		CATEGORY_TITLE.put(SongCategory.Mixtape, "Mixtape");
+		CATEGORY_TITLE.put(SongCategory.Blues, "Blues");
+		CATEGORY_TITLE.put(SongCategory.Soul, "Soul");
+		CATEGORY_TITLE.put(SongCategory.Dance, "Dance");
+		CATEGORY_TITLE.put(SongCategory.Latin, "Latin");
+		CATEGORY_TITLE.put(SongCategory.Ambient, "Ambient");
+		CATEGORY_TITLE.put(SongCategory.AlternavtiveRock, "Alternative Rock");
+		CATEGORY_TITLE.put(SongCategory.IndieRock, "Indue Rock");
+		CATEGORY_TITLE.put(SongCategory.DeepHouse, "Deep House");
+		CATEGORY_TITLE.put(SongCategory.Disco, "Disco");
+		CATEGORY_TITLE.put(SongCategory.DrumBass, "Drum & Bass");
+		CATEGORY_TITLE.put(SongCategory.Trance, "Trance");
+		CATEGORY_TITLE.put(SongCategory.Dubstep, "Dubstep");
+		CATEGORY_TITLE.put(SongCategory.Electro, "Electro");
+		CATEGORY_TITLE.put(SongCategory.Folk, "Folk");
+		CATEGORY_TITLE.put(SongCategory.HardcoreTechno, "Hardcore Techno");
+		CATEGORY_TITLE.put(SongCategory.MiniamalTechno, "Minimal Techno");
+		CATEGORY_TITLE.put(SongCategory.ProgressiveHouse, "Progressive House");
+		CATEGORY_TITLE.put(SongCategory.Punk, "Punk");
+		CATEGORY_TITLE.put(SongCategory.TechHouse, "Tech house");
+		CATEGORY_TITLE.put(SongCategory.Trap, "Trap");
+		CATEGORY_TITLE.put(SongCategory.TripHop, "Trip Hop");
+		CATEGORY_TITLE.put(SongCategory.SingerSongWriter, "Singer-Songwriter");
+		CATEGORY_TITLE.put(SongCategory.Audiobooks, "Audiobooks");
+		CATEGORY_TITLE.put(SongCategory.Business, "Business");
+		CATEGORY_TITLE.put(SongCategory.Comedy, "Comedy");
+		CATEGORY_TITLE.put(SongCategory.Entertainment, "Entertainment");
+		CATEGORY_TITLE.put(SongCategory.Learning, "Learning");
+		CATEGORY_TITLE.put(SongCategory.NewsPolitics, "News  & Politics");
+		CATEGORY_TITLE.put(SongCategory.Science, "Science");
+		CATEGORY_TITLE.put(SongCategory.Sports, "Sports");
+		CATEGORY_TITLE.put(SongCategory.Storytelling, "Storytelling");
+		CATEGORY_TITLE.put(SongCategory.Technology, "Technology");
 	}
 	
 	//Database name array

@@ -1,5 +1,9 @@
 package ngo.music.player.Items;
 
+import java.util.ArrayList;
+
+import ngo.music.player.Category.SongCategory;
+
 public class SongItem {
 	private String title;
 
@@ -8,27 +12,33 @@ public class SongItem {
 	private String info;
 	private String songUrl;
 	private String imageUrl;
+	private ArrayList<SongCategory> categories;
 
 	//Contructor
 	public SongItem(){
 		
 	}
 	
-	public SongItem(String title, String imageUrl, String author, String songUrl){
+	public SongItem(int id, String title, String imageUrl, String author, String songUrl){
+		this.songID = id;
 		this.setSongID(0);
 		this.title = title;
 		this.songUrl = songUrl;
 		this.author  = author;
 		this.imageUrl = imageUrl;
+		this.info = "";
+		
 	}
 	
-	public SongItem(String title, String imageUrl, String author, String songUrl, String info){
+	public SongItem(int id, String title, String imageUrl, String author, String songUrl, String info){
+		this.songID = id;
 		this.title = title;
 		this.songUrl = songUrl;
 		this.author  = author;
 		this.info = info;
 		this.imageUrl = imageUrl;
 		this.songID = 0;
+		
 	}
 	
 	
@@ -77,5 +87,15 @@ public class SongItem {
 	public void setSongID(int songID) {
 		this.songID = songID;
 	}
+
+	public ArrayList<SongCategory> getCategories() {
+		return categories;
+	}
+
+	public void setCategories(ArrayList<SongCategory> categories) {
+		this.categories = categories;
+	}
+
+	
 	
 }

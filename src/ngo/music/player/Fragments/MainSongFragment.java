@@ -2,6 +2,7 @@ package ngo.music.player.Fragments;
 
 import ngo.music.player.R;
 import ngo.music.player.MainActivity.PlaceholderFragment;
+import ngo.music.player.Category.SongCategory;
 import android.app.FragmentManager;
 import android.support.v4.app.Fragment;
 
@@ -18,7 +19,7 @@ NavigationDrawerFragment.NavigationDrawerCallbacks {
 				case 1:
 					fragmentManager
 					.beginTransaction()
-					.replace(R.id.container, new AllSongsFragment()).commit();
+					.replace(R.id.container, new ListSongsFragment()).commit();
 						
 					break;
 
@@ -26,7 +27,7 @@ NavigationDrawerFragment.NavigationDrawerCallbacks {
 					fragmentManager
 					.beginTransaction()
 					.replace(R.id.container,
-							new AllSongsFragment()).commit();
+							new ListSongsFragment()).commit();
 					break;
 				}
 		

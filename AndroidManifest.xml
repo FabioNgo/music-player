@@ -3,7 +3,7 @@
     package="ngo.music.player"
     android:versionCode="1"
     android:versionName="1.0" >
-
+<uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-sdk
         android:minSdkVersion="15"
         android:targetSdkVersion="19" />
@@ -15,6 +15,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
+            
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service android:name="ngo.music.player.MusicService" />
     </application>
 
 </manifest>
