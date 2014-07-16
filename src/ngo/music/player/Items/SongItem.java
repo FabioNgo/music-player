@@ -19,25 +19,24 @@ public class SongItem {
 		
 	}
 	
-	public SongItem(int id, String title, String imageUrl, String author, String songUrl){
-		this.songID = id;
-		this.setSongID(0);
-		this.title = title;
-		this.songUrl = songUrl;
-		this.author  = author;
-		this.imageUrl = imageUrl;
-		this.info = "";
-		
-	}
-	
 	public SongItem(int id, String title, String imageUrl, String author, String songUrl, String info){
 		this.songID = id;
 		this.title = title;
 		this.songUrl = songUrl;
 		this.author  = author;
+		this.imageUrl = imageUrl;
+		this.info = info;
+		
+	}
+	
+	public SongItem(String title, String imageUrl, String author, String songUrl, String info){
+		this.title = title;
+		this.songUrl = songUrl;
+		this.author  = author;
 		this.info = info;
 		this.imageUrl = imageUrl;
-		this.songID = 0;
+		this.songID = -1;
+		
 		
 	}
 	

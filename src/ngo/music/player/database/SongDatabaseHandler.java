@@ -15,7 +15,7 @@ import java.util.Set;
 
 import ngo.music.player.MainActivity;
 import ngo.music.player.StaticVariable;
-import ngo.music.player.Category.MusicCategory;
+
 import ngo.music.player.Category.SongCategory;
 import ngo.music.player.Items.SongItem;
 import android.content.ContentValues;

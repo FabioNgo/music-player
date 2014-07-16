@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Set;
 
 import ngo.music.player.Category.SongCategory;
-import ngo.music.player.Fragments.ExploreDrawerFragment;
+import ngo.music.player.Fragments.ExploreListItemFragment;
 import ngo.music.player.Fragments.NavigationDrawerFragment;
 import android.app.Activity;
 import android.app.ActionBar;
@@ -13,6 +13,7 @@ import android.app.FragmentManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -39,8 +40,11 @@ public class MainActivity extends FragmentActivity implements
 	 */
 	private CharSequence mTitle;
 	
+	public static int screenWidth;
+	public static int screenHeight;
 	public static SongCategory SongCategory = null;
 
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -53,6 +57,16 @@ public class MainActivity extends FragmentActivity implements
 		// Set up the drawer.
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer,
 				(DrawerLayout) findViewById(R.id.drawer_layout));
+		
+		/**
+		 * get screen's size;
+		 */
+
+		// Get the width and length of the screen
+		DisplayMetrics displayMetrics = new DisplayMetrics();
+		getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+		screenHeight = displayMetrics.heightPixels;
+		screenWidth = displayMetrics.widthPixels;
 	}
 
 	@Override
@@ -64,7 +78,7 @@ public class MainActivity extends FragmentActivity implements
 			fragmentManager
 			.beginTransaction()
 			.replace(R.id.container,
-					new ExploreDrawerFragment()).commit();	
+					new ExploreListItemFragment()).commit();	
 			break;
 
 		default:
@@ -121,12 +135,12 @@ public class MainActivity extends FragmentActivity implements
 		return super.onOptionsItemSelected(item);
 	}
 
-//	/**
-//	 * @return the standard size for rendering item
-//	 */
-//	public static int getStandardSize() {
-//		return Math.min(screenWidth, screenHeight);
-//	}
+	/**
+	 * @return the standard size for rendering item
+	 */
+	public static int getStandardSize() {
+		return Math.min(screenWidth, screenHeight);
+	}
 	/**
 	 * A placeholder fragment containing a simple view.
 	 */
