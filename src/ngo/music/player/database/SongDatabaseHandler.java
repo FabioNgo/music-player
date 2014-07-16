@@ -24,7 +24,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-public class RSSDatabaseHandler extends SQLiteOpenHelper {
+public class SongDatabaseHandler extends SQLiteOpenHelper {
 
 	// Database Version
 	private static final int DATABASE_VERSION = 1;
@@ -35,7 +35,7 @@ public class RSSDatabaseHandler extends SQLiteOpenHelper {
 	// Contacts table name
 	private static String SONG_TABLE = "songs";
 	
-	private static RSSDatabaseHandler mInstance = null;
+	private static SongDatabaseHandler mInstance = null;
 
 	// Contacts Table Columns names
 	private static final String KEY_ID = "id";
@@ -49,7 +49,7 @@ public class RSSDatabaseHandler extends SQLiteOpenHelper {
 
 	// private long insertedRowIndex;
 
-	public RSSDatabaseHandler(Context context) {
+	public SongDatabaseHandler(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 		
 		
@@ -83,13 +83,13 @@ public class RSSDatabaseHandler extends SQLiteOpenHelper {
 	}
 
 	
-	  public static RSSDatabaseHandler getInstance(Context ctx) {
+	  public static SongDatabaseHandler getInstance(Context ctx) {
 
 		    // Use the application context, which will ensure that you 
 		    // don't accidentally leak an Activity's context.
 		    // See this article for more information: http://bit.ly/6LRzfx
 		    if (mInstance == null) {
-		      mInstance = new RSSDatabaseHandler(ctx.getApplicationContext());
+		      mInstance = new SongDatabaseHandler(ctx.getApplicationContext());
 		    }
 		    return mInstance;
 		  }
