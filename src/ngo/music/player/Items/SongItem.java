@@ -2,6 +2,7 @@ package ngo.music.player.Items;
 
 import java.util.ArrayList;
 
+import ngo.music.player.MainActivity;
 import ngo.music.player.Category.SongCategory;
 
 public class SongItem {
@@ -16,7 +17,12 @@ public class SongItem {
 
 	//Contructor
 	public SongItem(){
-		
+		this.songID = -1;
+		this.title = "title";
+		this.songUrl = "songUrl";
+		this.author  = "author";
+		this.imageUrl = "";
+		this.info = "info";
 	}
 	
 	public SongItem(int id, String title, String imageUrl, String author, String songUrl, String info){

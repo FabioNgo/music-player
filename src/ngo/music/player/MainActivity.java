@@ -65,8 +65,8 @@ public class MainActivity extends FragmentActivity implements
 		// Get the width and length of the screen
 		DisplayMetrics displayMetrics = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-		screenHeight = displayMetrics.heightPixels;
-		screenWidth = displayMetrics.widthPixels;
+		StaticVariable.screenHeight = displayMetrics.heightPixels;
+		StaticVariable.screenWidth = displayMetrics.widthPixels;
 	}
 
 	@Override

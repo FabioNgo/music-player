@@ -4,8 +4,10 @@ import java.util.ArrayList;
 
 import ngo.music.player.MainActivity;
 import ngo.music.player.R;
+import ngo.music.player.StaticVariable;
 import ngo.music.player.Imageloader.ImageLoader;
 import ngo.music.player.Items.SongItem;
+import ngo.vnexpress.reader.BasicFunctions.BasicFunctions;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,9 +16,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class AllSongAdapter  extends ArrayAdapter<SongItem>{
+public class ListSongAdapter  extends ArrayAdapter<SongItem>{
 
-	public AllSongAdapter(Context context, int resource) {
+	public ListSongAdapter(Context context, int resource) {
 		super(context, resource);
 		// TODO Auto-generated constructor stub
 	}
@@ -28,7 +30,7 @@ public class AllSongAdapter  extends ArrayAdapter<SongItem>{
 		 * we care about now is ArrayList<Item> objects, because it is the list of
 		 * objects we want to display.
 		 */
-		public AllSongAdapter(Context context, int textViewResourceId,
+		public ListSongAdapter(Context context, int textViewResourceId,
 				ArrayList<SongItem> songs) {
 			super(context, textViewResourceId, songs);
 			this.songs = songs;
@@ -71,20 +73,20 @@ public class AllSongAdapter  extends ArrayAdapter<SongItem>{
 				TextView title = (TextView) v.findViewById(R.id.title);
 				ImageView avatar = (ImageView) v.findViewById(R.id.avatar);
 				TextView author = (TextView) v.findViewById(R.id.author);
-
+				
 				if (title != null) {
 					title.setText(i.getTitle());
 				}
 				//
 				if (avatar != null) {
-					//int size = MainActivity.getStandardSize() / 3;
-					// icon.getLayoutParams().width = size;
-					//icon.getLayoutParams().height = size;
-
+					int size = (int) (StaticVariable.screenWidth * 0.2);
+					 avatar.getLayoutParams().width = size;
+					avatar.getLayoutParams().height = size;
+					
 					ImageLoader imgLoader = new ImageLoader(getContext());
 					// Loader image - will be shown before loading image
 					int loader = R.drawable.image_not_found;
-
+					
 					imgLoader.DisplayImage(i.getImageUrl(), loader, avatar);
 					
 

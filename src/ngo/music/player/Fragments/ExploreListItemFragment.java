@@ -13,7 +13,9 @@ import ngo.music.player.StaticVariable;
 import ngo.music.player.Adapters.ExploreAdapter;
 import ngo.music.player.Category.SongCategory;
 import ngo.music.player.Items.ExploreItem;
+import ngo.music.player.Items.SongItem;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,7 +47,12 @@ public class ExploreListItemFragment extends Fragment {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				// TODO Auto-generated method stub
-				
+				ArrayList<SongItem> songs = new ArrayList<SongItem>();
+				songs.add(new SongItem());
+				songs.add(new SongItem());
+				PlayerFragment fragment = new PlayerFragment(songs);
+				FragmentManager fragmentManager  = getFragmentManager();
+				fragmentManager.beginTransaction().replace(R.id.container,fragment).commit();
 			}
 			
 		});

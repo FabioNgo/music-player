@@ -11,6 +11,8 @@ public class StaticVariable {
 
 	//Map the category in MusicCategory with the title in Explore Fragment
 	public static final HashMap<SongCategory, String> CATEGORY_TITLE = new HashMap<SongCategory, String>();
+	public static int screenHeight;
+	public static int screenWidth;
 	
 	//Inital the hashmap
 	static {
